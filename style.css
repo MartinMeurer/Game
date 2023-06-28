@@ -1,0 +1,546 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Edu+NSW+ACT+Foundation:wght@600&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Noto+Sans+Symbols+2&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Noto+Sans+Symbols+2&family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Noto+Sans+Symbols+2&family=Roboto+Mono&display=swap'); */
+
+
+/* Low End Laptop Resolution: 1366 x 768 px */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+body{
+    background-color: black
+}
+#main{
+    margin: 10px auto;
+    text-align: center;
+
+    width: 500px;
+    height: 500px;
+    font-size: 60px;
+}
+#title{
+    margin: 0 auto;
+    color: floralwhite;
+
+    border: 6px solid grey;
+    border-bottom: 3px solid grey;
+    border-radius: 3px 3px 0 0;
+    background-color: black;
+
+    font-size: 16px;
+}
+#title > h1{
+    margin: 15px
+}
+
+#game{
+    margin: 0 auto;
+    height: 350px;
+}
+#field{
+    margin: 0 auto;
+    color: black;
+    background-color: black;
+    font-family: monospace;
+
+    border: 6px solid grey;
+    border-top: 3px solid grey;
+    border-bottom: 3px solid grey;    
+
+    padding: 2px;
+    font-size: 13px;
+    height: 350px;
+}
+#info{
+    margin: 0 auto;
+    color: floralwhite;
+    border: 6px solid grey;
+    border-top: 3px solid grey;
+    border-radius: 0 0 3px 3px;
+    background-color: black;
+
+    font-size: 16px;
+    height: 150px
+}
+#info > p{
+    margin: 15px
+}
+#table{
+    margin: 0 auto;
+    font-family: monospace;
+    color: white;
+    background-color: black
+}
+.tile{
+    color: white;
+    background-color: black;
+}
+
+.draw_empty{
+    color: black;
+    background-color: black;
+    padding: 0 4px
+}
+.draw_water{
+    color: blue;
+    background-color: black;
+    padding: 0 4px
+}
+.draw_water2{
+    color: rgb(2, 2, 136);
+    background-color: black;
+    padding: 0 4px
+}
+.draw_water3{
+    color: rgb(9, 9, 170);
+    background-color: black;
+    padding: 0 4px
+}
+.draw_dirt{
+    color: brown;
+    background-color: black;
+    padding: 0 4px
+}
+.draw_dirt2{
+    color: rgb(201, 49, 49);
+    background-color: black;
+    padding: 0 4px
+}
+.draw_dirt3{
+    color: rgb(116, 27, 27);
+    background-color: black;
+    padding: 0 4px
+}
+.draw_grass{
+    color: green;
+    background-color: black;
+    padding: 0 4px
+}
+.draw_grass2{
+    color: rgb(3, 78, 3);
+    background-color: black;
+    padding: 0 4px
+}
+.draw_grass3{
+    color: rgb(6, 105, 6);
+    background-color: black;
+    padding: 0 4px
+}
+.draw_block{
+    color: white;
+    background-color: black;
+    padding: 0 4px
+}
+.draw_stone{
+    color: grey;
+    background-color: black;
+    padding: 0 4px
+}
+.draw_stone2{
+    color: rgb(83, 83, 83);
+    background-color: black;
+    padding: 0 4px
+}
+.draw_stone3{
+    color: rgb(153, 152, 152);
+    background-color: black;
+    padding: 0 4px
+}
+.draw_sand{
+    color: sandyBrown;
+    background-color: black;
+    padding: 0 4px
+}
+.draw_sand2{
+    color: rgb(190, 130, 77);
+    background-color: black;
+    padding: 0 4px
+}
+.draw_sand3{
+    color: rgb(139, 95, 56);
+    background-color: black;
+    padding: 0 4px
+}
+.draw_marble{
+    color: bisque;
+    background-color: black;
+    padding: 0 4px
+}
+.draw_marble2{
+    color: rgb(219, 197, 170);
+    background-color: black;
+    padding: 0 4px
+}
+.draw_marble3{
+    color: rgb(172, 154, 134);
+    background-color: black;
+    padding: 0 4px
+}
+.draw_deco{
+    color: darkmagenta;
+    background-color: black;
+    padding: 0 4px
+}
+.draw_deco2{
+    color: rgb(105, 1, 105);
+    background-color: black;
+    padding: 0 4px
+}
+.draw_deco3{
+    color: rgb(146, 0, 146);
+    background-color: black;
+    padding: 0 4px
+}
+.draw_swamp{
+    color: darkmagenta;
+    background-color: black;
+    padding: 0 4px
+}
+.draw_swamp2{
+    color: rgb(105, 1, 105);
+    background-color: black;
+    padding: 0 4px
+}
+.draw_swamp3{
+    color: rgb(146, 0, 146);
+    background-color: black;
+    padding: 0 4px
+}
+.draw_toxic{
+    color: lime;
+    background-color: black;
+    padding: 0 4px
+}
+.draw_toxic2{
+    color: rgb(177, 216, 2);
+    background-color: black;
+    padding: 0 4px
+}
+.draw_toxic3{
+    color: rgb(172, 169, 2);
+    background-color: black;
+    padding: 0 4px
+}
+.draw_ruin{
+    color: darkslategrey;
+    background-color: black;
+    padding: 0 4px
+}
+.draw_ruin2{
+    color: rgb(34, 56, 56);
+    background-color: black;
+    padding: 0 4px
+}
+.draw_ruin3{
+    color: rgb(62, 104, 104);
+    background-color: black;
+    padding: 0 4px
+}
+
+.draw_gold{
+    color: gold;
+    background-color: black;
+    padding: 0 4px
+}
+.draw_player{
+    color: orange;
+    background-color: black;
+    padding: 0 4px
+}
+.draw_npc{
+    color: skyblue;
+    background-color: black;
+    padding: 0 4px
+}
+.draw_enemy{
+    color: red;
+    background-color: black;
+    padding: 0 4px
+}
+.draw_bullet{
+    color: rgb(194, 21, 194);
+    background-color: black;
+    padding: 0 4px
+}
+
+.draw_flower{
+    color: deeppink;
+    background-color: black;
+    padding: 0 4px
+}
+.draw_flower2{
+    color: greenyellow;
+    background-color: black;
+    padding: 0 4px
+}
+.draw_flower3{
+    color: aquamarine;
+    background-color: black;
+    padding: 0 4px
+}
+.draw_flower4{
+    color: coral;
+    background-color: black;
+    padding: 0 4px
+}
+.draw_flower5{
+    color: indigo;
+    background-color: black;
+    padding: 0 4px
+}
+
+@media screen and (min-width: 768px) and (min-height: 678px) {
+    #main{
+        width: 726px;
+        height: 678px;
+        font-size: 60px
+    }
+    #title{
+        font-size: 25px;
+        border: 6px solid grey;
+        border-bottom: 3px solid grey;
+        border-radius: 3px 3px 0 0
+    }
+    #title > h1{
+        margin: 50px
+    }
+    #game{
+        height: 478px
+    }
+    #field{
+        font-size: 19px;
+        height: 478px;
+        border: 6px solid grey;
+        border-top: 3px solid grey;
+        border-bottom: 3px solid grey;    
+        padding: 3px
+    }
+    #info{
+        font-size: 22px;
+        height: 200px;
+        border: 6px solid grey;
+        border-top: 3px solid grey;
+        border-radius: 0 0 3px 3px
+    }
+    #info > p{
+        margin: 50px
+    }
+ }
+
+@media screen and (min-width: 768px){
+   #main{
+        width: 726px;
+        height: 678px;
+        font-size: 60px
+   }
+   #title{
+        display: none;
+
+        font-size: 25px;
+        border: 6px solid grey;
+        border-bottom: 3px solid grey;
+        border-radius: 3px 3px 0 0
+   }
+   #title > h1{
+	    margin: 50px
+   }
+   #game{
+        height: 95vh;
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+   #field{
+        font-size: 19px;
+        height: 478px;
+        border: 6px solid grey;
+        border-top: 3px solid grey;
+        border-bottom: 3px solid grey;    
+        padding: 3px
+   }
+   #info{
+        display: none;
+
+        font-size: 22px;
+        height: 200px;
+        border: 6px solid grey;
+        border-top: 3px solid grey;
+        border-radius: 0 0 3px 3px
+   }
+   #info > p{
+        margin: 50px
+   }
+}
+
+
+@media screen and (min-width: 1200px) and (min-height: 1008px){
+   #main{
+        width: 1168px;
+        height: 1008px;
+        font-size: 60px
+   }
+   #title{
+        font-size: 38px;
+        border: 8px solid grey;
+        border-bottom: 4px solid grey;
+        border-radius: 4px 4px 0 0
+   }
+   #title > h1{
+        margin: 50px
+   }
+   #game{
+        height: 758px
+   }
+   #field{
+        font-size: 31px;
+        height: 758px;
+        border: 8px solid grey;
+        border-top: 4px solid grey;
+        border-bottom: 4px solid grey;    
+        padding: 4px
+   }
+   #info{
+        font-size: 35px;
+        height: 250px;
+        border: 8px solid grey;
+        border-top: 4px solid grey;
+        border-radius: 0 0 4px 4px
+   }
+   #info > p{
+        margin: 50px
+   }
+}
+
+@media screen and (min-width: 1200px){
+    #main{
+        width: 830px;
+        height: 578px;
+        font-size: 60px
+    }
+    #title{
+        /* display: none; */
+        float: left;
+        font-size: 30px;
+        border: 8px solid grey;
+        border-bottom: 4px solid grey;
+        border-radius: 4px 4px 0 0
+    }
+    #title > h1{
+        margin: 50px
+    }
+    #game{
+        height: 95vh;
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+    #field{
+        font-size: 24px;
+        height: 580px;
+        border: 8px solid grey;
+        border-top: 4px solid grey;
+        border-bottom: 4px solid grey;    
+        padding: 4px
+    }
+    #info{
+        /* display: none; */
+        float: right;
+        font-size: 30px;
+        /* height: 100px; */
+        border: 8px solid grey;
+        border-top: 4px solid grey;
+        border-radius: 0 0 4px 4px
+    }
+    #info > p{
+        margin: 50px
+    }
+ }
+
+@media screen and (min-width: 1920px){
+   #main{
+        width: 1870px;
+        height: 1470px;
+        font-size: 60px
+   }
+   #title{
+        font-size: 55px;
+        border: 10px solid grey;
+        border-bottom: 5px solid grey;
+        border-radius: 5px 5px 0 0
+   }
+   #title > h1{
+        margin: 50px
+   }
+   #game{
+        height: 1220px
+   }
+   #field{
+        font-size: 50px;
+        height: 1220px;
+        border: 10px solid grey;
+        border-top: 5px solid grey;
+        border-bottom: 5px solid grey;    
+        padding: 4px
+   }
+   #info{
+        font-size: 55px;
+        height: 250px;
+        border: 10px solid grey;
+        border-top: 5px solid grey;
+        border-radius: 0 0 5px 5px
+   }
+   #info > p{
+        margin: 50px
+   }
+}
+@media screen and (min-width: 2500px){
+
+}
+@media screen and (min-width: 3000px){
+   #main{
+        width: 2260px;
+        height: 1770px;
+        font-size: 60px
+   }
+   #title{
+        font-size: 55px;
+        border: 10px solid grey;
+        border-bottom: 5px solid grey;
+        border-radius: 5px 5px 0 0
+   }
+   #title > h1{
+        margin: 50px
+   }
+   #game{
+        height: 1470px
+   }
+   #field{
+        font-size: 60px;
+        height: 1470px;
+        border: 10px solid grey;
+        border-top: 5px solid grey;
+        border-bottom: 5px solid grey;    
+        padding: 10px
+   }
+   #info{
+        font-size: 50px;
+        height: 300px;
+        border: 10px solid grey;
+        border-top: 5px solid grey;
+        border-radius: 0 0 5px 5px
+   }
+   #info > p{
+        margin: 50px
+   }
+
+}
